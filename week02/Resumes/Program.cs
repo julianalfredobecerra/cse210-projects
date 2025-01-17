@@ -18,7 +18,7 @@ class Program
         job2._startYear = 2019;
         job2._endYear = 2024;
 
-        Resume myResume = new Resume();
+        Resumes myResume = new Resumes();
         myResume._name = "Julian Becerra";
 
         myResume._jobs.Add(job1);
