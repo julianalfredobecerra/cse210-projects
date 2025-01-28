@@ -21,7 +21,7 @@ class Program
 
             switch (choice)
             {
-                case "1": // Write
+                case "1":
                     string prompt = promptGenerator.GetRandomPrompt();
                     Console.WriteLine($"\nPrompt: {prompt}");
                     Console.Write("Your response: ");
@@ -32,24 +32,24 @@ class Program
                     Console.WriteLine("Entry added!\n");
                     break;
 
-                case "2": // Display
+                case "2":
                     Console.WriteLine("\nJournal Entries:");
                     myJournal.DisplayAll();
                     break;
 
-                case "3": // Load
+                case "3":
                     Console.WriteLine("\nLoading entries from file...");
                     myJournal.LoadFromFile(filePath);
                     Console.WriteLine("Entries loaded successfully.\n");
                     break;
 
-                case "4": // Save
+                case "4":
                     Console.WriteLine("\nSaving entries to file...");
                     myJournal.SaveToFile(filePath);
                     Console.WriteLine("Entries saved successfully.\n");
                     break;
 
-                case "5": // Quit
+                case "5":
                     Console.WriteLine("Goodbye!");
                     isRunning = false;
                     break;
