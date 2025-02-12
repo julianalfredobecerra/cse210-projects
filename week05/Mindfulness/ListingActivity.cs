@@ -12,6 +12,8 @@ class ListingActivity : Activity
     };
 
     public ListingActivity() : base("Listing", "This activity helps you reflect by listing things in a given category.") { }
+    // "Listing" → Sets the _name field in the Activity class.
+    //"This activity helps you reflect by listing things in a given category." → Sets the _description field in the Activity class.
 
     public override void Run()
     {
@@ -29,19 +31,28 @@ class ListingActivity : Activity
     {
         Random rand = new Random();
         return _prompts[rand.Next(_prompts.Count)];
+        // rand.Next(_prompts.Count) generates a random number between 0 and _prompts.Count - 1.
+        // This random number is used as an index to select an item from _prompts.
+        // The selected prompt is returned as the result.
     }
 
     public List<string> GetListFromUser()
     {
         List<string> items = new List<string>();
         int elapsed = 0;
+        // elapsed keeps track of how much time has passed in the loop.
         while (elapsed < _duration)
+        // The loop runs until the elapsed time reaches the _duration set by the user.
         {
             string input = Console.ReadLine();
+            // The program waits for the user to type something and press Enter.
             if (!string.IsNullOrEmpty(input))
                 items.Add(input);
+            // If the input is not empty, it is added to the items list.
             elapsed += 2;
+            // Each iteration adds 2 seconds to elapsed, simulating the passage of time.
         }
         return items;
+        // After the loop ends, the list of inputs is returned
     }
 }
